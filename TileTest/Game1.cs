@@ -8,6 +8,8 @@ namespace TileTest.Desktop
 {
     public class Game1 : Game
     {
+        float frameRate;
+        SpriteFont sf;
         public const int WIDTH = 896;
         public const int HEIGHT = 640;
         int blockX;
@@ -74,7 +76,7 @@ namespace TileTest.Desktop
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            sf = Content.Load<SpriteFont>("FPS");
             player.LoadContent(Content);
 
             foreach (Tile tile in tiles)
@@ -92,36 +94,19 @@ namespace TileTest.Desktop
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            frameRate = (int)(1 / (float)gameTime.ElapsedGameTime.TotalSeconds);
 
             player.Update(gameTime);
-
-            if (player.KeyPressed(Keys.Right))
+            foreach (Tile tile in tiles)
             {
-                if (player.Position.X + tileSize >= Game1.WIDTH)
-                    player.DoNothing();
-                else
-                    player.MoveRight();
-            }
-            if (player.KeyPressed(Keys.Left))
-            {
-                if (player.Position.X <= 0)
-                    player.DoNothing();
-                else
-                    player.MoveLeft();
-            }
-            if (player.KeyPressed(Keys.Down))
-            {
-                if (player.Position.Y + tileSize >= Game1.HEIGHT)
-                    player.DoNothing();
-                else
-                    player.MoveDown();
-            }
-            if (player.KeyPressed(Keys.Up))
-            {
-                if (player.Position.Y <= 0)
-                    player.DoNothing();
-                else
-                    player.MoveUp();
+                if (player.Rect.Intersects(tile.Rect))
+                {
+                    if (tile.Type == 'w')
+                    {
+                        player.StopMovement = true;
+                    }
+                    else player.StopMovement = false;
+                }
             }
 
             base.Update(gameTime);
@@ -136,6 +121,7 @@ namespace TileTest.Desktop
             foreach (Tile tile in tiles)
                 tile.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            spriteBatch.DrawString(sf, frameRate.ToString(), new Vector2(WIDTH - 30, 0), Color.White);
 
             spriteBatch.End();
 

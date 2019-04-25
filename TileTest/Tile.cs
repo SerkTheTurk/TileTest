@@ -18,6 +18,11 @@ namespace TileTest.Desktop
             type = b;
         }
 
+        public Rectangle Rect
+        {
+            get { return rectangle; }
+        }
+
         public void LoadContent(ContentManager content)
         {
             switch (type)

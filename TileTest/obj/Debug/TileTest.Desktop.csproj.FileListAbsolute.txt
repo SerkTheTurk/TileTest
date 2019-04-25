@@ -21,3 +21,4 @@
 /home/serk/Projects/TileTest/TileTest/obj/Debug/TileTest.Desktop.csproj.CoreCompileInputs.cache
 /home/serk/Projects/TileTest/TileTest/obj/Debug/TileTest.Desktop.csproj.CopyComplete
 /home/serk/Projects/TileTest/TileTest/obj/Debug/TileTest.Desktop.exe
+/home/serk/Projects/TileTest/TileTest/bin/Debug/Content/FPS.xnb

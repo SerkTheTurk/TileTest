@@ -6,6 +6,17 @@
       <File FileName="TileTest/map1.csv" Line="4" Column="10" />
       <File FileName="TileTest/Player.cs" Line="9" Column="24" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TileTest" expanded="True">
+            <Node name="TileTest.Desktop" expanded="True">
+              <Node name="Game1.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TileTest.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -1,5 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/serk/Projects/TileTest/TileTest/Content/brick.png","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/brick.xnb","TextureProcessor","Texture2DContent",278,16469,0.322167
+"/home/serk/Projects/TileTest/TileTest/Content/FPS.spritefont","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/FPS.xnb","FontDescriptionProcessor","SpriteFontContent",2009,21521,0.787093
 "/home/serk/Projects/TileTest/TileTest/Content/grass.png","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/grass.xnb","TextureProcessor","Texture2DContent",969,16469,0.374744
-"/home/serk/Projects/TileTest/TileTest/Content/player.png","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/player.xnb","TextureProcessor","Texture2DContent",475,16469,0.353243
+"/home/serk/Projects/TileTest/TileTest/Content/player.png","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/player.xnb","TextureProcessor","Texture2DContent",413,7973,0.402892
 "/home/serk/Projects/TileTest/TileTest/Content/water.png","/home/serk/Projects/TileTest/TileTest/Content/bin/DesktopGL/Content/water.xnb","TextureProcessor","Texture2DContent",321,16469,0.004832

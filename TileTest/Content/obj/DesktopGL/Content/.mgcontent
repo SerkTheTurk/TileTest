@@ -5,11 +5,13 @@
   <Config />
   <SourceFiles>
     <File>/home/serk/Projects/TileTest/TileTest/Content/brick.png</File>
+    <File>/home/serk/Projects/TileTest/TileTest/Content/FPS.spritefont</File>
     <File>/home/serk/Projects/TileTest/TileTest/Content/grass.png</File>
     <File>/home/serk/Projects/TileTest/TileTest/Content/player.png</File>
     <File>/home/serk/Projects/TileTest/TileTest/Content/water.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

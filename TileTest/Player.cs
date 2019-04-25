@@ -12,15 +12,23 @@ namespace TileTest.Desktop
         Vector2 position;
         Rectangle rectangle;
         KeyboardState ks, lastks;
+        float speed;
 
         public Player(Vector2 p)
         {
             position = p;
+            speed = 3f;
         }
 
-        public Vector2 Position
+        public Rectangle Rect
         {
-            get { return position; }
+            get { return rectangle; }
+        }
+
+        bool stopMove;
+        public bool StopMovement
+        {
+            set { stopMove = value; }
         }
 
         public void LoadContent(ContentManager content)
@@ -30,30 +38,38 @@ namespace TileTest.Desktop
 
         public void Update(GameTime gameTime)
         {
-            lastks = ks;
             ks = Keyboard.GetState();
             rectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
-        }
 
-        public void MoveRight()
-        {
-            position.X += 64;
-        }
-        public void MoveLeft()
-        {
-            position.X -= 64;
-        }
-        public void MoveDown()
-        {
-            position.Y += 64;
-        }
-        public void MoveUp()
-        {
-            position.Y -= 64;
-        }
-        public void DoNothing()
-        {
-            //lel
+            if (ks.IsKeyDown(Keys.Right))
+            {
+                if (position.X + texture.Width >= Game1.WIDTH || stopMove == true)
+                    position.X += 0;
+                else
+                    position.X += speed;
+            }
+            if (ks.IsKeyDown(Keys.Left))
+            {
+                if (position.X <= 0 || stopMove == true)
+                    position.X += 0;
+                else
+                    position.X -= speed;
+            }
+            if (ks.IsKeyDown(Keys.Up))
+            {
+                if (position.Y <= 0 || stopMove == true)
+                    position.Y += 0;
+                else
+                    position.Y -= speed;
+            }
+            if (ks.IsKeyDown(Keys.Down))
+            {
+                if (position.Y + texture.Height >= Game1.HEIGHT || stopMove == true)
+                    position.Y += 0;
+                else
+                    position.Y += speed;
+            }
+
         }
 
         public bool KeyPressed(Keys key)
